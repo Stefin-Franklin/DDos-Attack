@@ -9,6 +9,8 @@
 by overwhelming it with traffic from multiple sources. They target a wide variety of important resources
 from banks to news websites, and present a major challenge to making sure people can publish and access important information
 
+![](https://github.com/Stephin-Franklin/DDos-Attack/blob/master/Screenshot_20191110-140138.png)
+
 ### Dwonload&Install
 
 ### git clone https://github.com/Stephin-Franklin/DDos-Attack
