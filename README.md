@@ -18,7 +18,7 @@ Windows:
 
 `Download Python in www.python.org/download/`
 
-# Using DDos-Attack
+## Using DDos-Attack
 
 Linux:
 
