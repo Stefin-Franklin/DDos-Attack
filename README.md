@@ -32,8 +32,6 @@ Windows:
 
 `python3 ddos-attack.py`
 
-![](Screenshot_20191110-140138.png)
-
 ## Contributors
 
 * Paxv28 - [Github](https://github.com/Paxv28)
