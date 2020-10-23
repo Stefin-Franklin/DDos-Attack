@@ -1,30 +1,41 @@
+# DDos-Attack
 
+DDos-Attack is a UDP Flood tool, which sends large packets 
+making the server unavailable.
 
+## Prerequisites
+   * Have the latest version of Python3 installed
 
+## Installing DDos-Attack
 
-# DDos-Attack 
-### What Is A DDos-Attack
+MacOSX and Linux:
 
-### A Distributed Denial of Service (DDoS) attack is an attempt to make an online service unavailable 
-by overwhelming it with traffic from multiple sources. They target a wide variety of important resources
-from banks to news websites, and present a major challenge to making sure people can publish and access important information
+`brew install python`
 
-![](https://github.com/Stephin-Franklin/DDos-Attack/blob/master/Screenshot_20191110-140138.png)
+`sudo apt-get install python3`
 
-### Dwonload&Install
+Windows:
 
-### git clone https://github.com/Stephin-Franklin/DDos-Attack
+`Download Python in www.python.org/download/`
 
-### cd DDos-Attack
+# Using DDos-Attack
 
-### chmod +x ddos-attack.py
+Linux:
 
-### python ddos-attack.py
+`python3 ddos-attack.py`
 
-### ScreenShot 
+MacOSX:
 
+`python ddos-attack.py`
 
-### YouTube channel
+Windows:
 
-https://www.youtube.com/AnonymousTim3
+`python3 ddos-attack.py`
 
+## Contributors
+
+* Paxv28 - [Github](https://github.com/Paxv28)
+
+## Declaimer
+
+The author of this program is not responsible for his actions.
