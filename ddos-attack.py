@@ -28,7 +28,7 @@ class DAttack:
     def Attack(self):
         try:
             s.sendto(self.packet, (self.ip, int(self.port)))
-            print("[ ! ] Attacking... {self.ip} in Port {self.port}")
+            print(f"[ ! ] Attacking... {self.ip} in Port {self.port}")
         except socket.error:
             print("[ ! ] No Connection!, Target may be down.")
             s.close()
